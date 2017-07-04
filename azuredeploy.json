@@ -30,7 +30,7 @@
             "metadata": {
                 "description": "Password for ansible tower console admin"
             },
-            "defaultValue": "password"
+            "defaultValue": "[concat('pwd', take(uniqueString(resourceGroup().id),8))]"
         },
         "ansibleTowerDatabasePassword": {
             "type": "securestring",
@@ -38,7 +38,7 @@
             "metadata": {
                 "description": "Password for ansible tower database"
             },
-            "defaultValue": "password"
+            "defaultValue": "[concat('pwd', take(uniqueString(resourceGroup().id),8))]"
         },
         "windowsClientCount": {
             "type": "int",
@@ -990,6 +990,10 @@
         },
         "VM Password": {
             "value": "[parameters('vmPassword')]",
+            "type": "string"
+        },
+        "Tower Admin Password": {
+            "value": "[parameters('ansibleTowerAdminPassword')]",
             "type": "string"
         }
     }
