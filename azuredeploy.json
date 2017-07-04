@@ -119,7 +119,7 @@
         "virtualNetworkName": "ansible-vnet",
         "linuxSubnetName": "linux-agent-subnet",
         "windowsSubnetName": "windows-agent-subnet",
-        "towerSubnetName": "puppet-subnet",
+        "towerSubnetName": "tower-subnet",
         "addressPrefix": "10.0.0.0/16",
         "towerSubnetPrefix": "10.0.1.0/24",
         "linuxSubnetPrefix": "10.0.2.0/24",
@@ -174,7 +174,7 @@
             "name": "agent-avset",
             "apiVersion": "2015-06-15",
             "location": "[resourceGroup().location]",
-            "comments": "This availability set will consist of windows and linux virtual machines configured as puppet agents ",
+            "comments": "This availability set will consist of windows and linux virtual machines configured as ansible agents ",
             "tags": {
                 "displayName": " Agents Availability Set",
                 "quickstartName": "[variables('quickstartTags').name]",
@@ -254,7 +254,7 @@
             "name": "[variables('linuxAgentNsgName')]",
             "apiVersion": "2016-03-30",
             "location": "[resourceGroup().location]",
-            "comments": "This will have firewall rules for linux puppet agents",
+            "comments": "This will have firewall rules for linux ansible agents",
             "tags": {
                 "displayName": "Linux Agent NSG",
                 "quickstartName": "[variables('quickstartTags').name]",
@@ -321,7 +321,7 @@
             "name": "[variables('windowsAgentNsgName')]",
             "apiVersion": "2016-03-30",
             "location": "[resourceGroup().location]",
-            "comments": "This will have firewall rules for windows puppet agents",
+            "comments": "This will have firewall rules for windows ansible agents",
             "tags": {
                 "displayName": "Windows Agent NSG",
                 "quickstartName": "[variables('quickstartTags').name]",
@@ -471,7 +471,7 @@
             "location": "[resourceGroup().location]",
             "comments": "This Virtual Network contains all the VMs needed",
             "tags": {
-                "displayName": "Puppet Virtual Network",
+                "displayName": "Ansible Virtual Network",
                 "quickstartName": "[variables('quickstartTags').name]",
                 "provider": "[variables('redHatTags').provider]"
             },
