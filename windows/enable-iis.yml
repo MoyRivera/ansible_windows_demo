@@ -1,14 +1,11 @@
 ---
-# This playbook installs and enables IIS on Windows hosts
-
-- name: Install IIS
+- name: installIISServer
   hosts: all
-  gather_facts: false
   tasks:
-    - name: Install IIS
+    - name: Install IIS Web-Server with sub features and management tools
       win_feature:
-        name: "Web-Server"
+        name: Web-Server
         state: present
-        restart: yes
-        include_sub_features: yes
-        include_management_tools: yes
+        restart: True
+        include_sub_features: True
+        include_management_tools: True
