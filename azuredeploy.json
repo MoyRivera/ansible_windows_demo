@@ -61,7 +61,7 @@
         },
         "linuxOS": {
             "type": "string",
-            "allowedValues": ["CentOS", "RHEL"],
+            "allowedValues": ["RHEL"],
             "defaultValue": "RHEL",
             "metadata": {
                 "description": "Select OS for Linux VMs including ansible Tower"
