@@ -2,11 +2,6 @@
 - name: installIISServer
   hosts: all
   tasks:
-    - name: Updating!!!
-      win_updates:
-        category_names:
-          - Tools
-          - Updates
     - name: Install IIS Web-Server with sub features and management tools
       win_feature:
         name: Web-Server
