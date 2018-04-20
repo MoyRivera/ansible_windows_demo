@@ -6,6 +6,9 @@
       win_feature:
         name: Web-Server
         state: present
-        restart: True
         include_sub_features: True
         include_management_tools: True
+      register: output
+    - name: reboot if installing Web-Server feature requires it
+      win_reboot:
+      when: output.reboot_required
